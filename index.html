@@ -461,7 +461,7 @@ nav.tabs { position:static; }
 .steps li::before { content:counter(st, arabic-indic); display:grid; place-items:center; width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff; font-weight:700; font-size:.85rem; margin-bottom:8px; }
 .steps b { display:block; margin-bottom:2px; } .steps span { color:var(--fg2); font-size:.85rem; line-height:1.7; }
 .connect .pitch > p.trust { color:var(--fg3); font-size:.85rem; margin:4px 0 0; line-height:1.6; display:flex; align-items:center; gap:8px; }
-.trust::before { content:"🔒"; filter:grayscale(1); }
+.trust svg { flex:none; }
 @media (max-width:860px) { .steps { grid-template-columns:1fr; gap:8px; } .steps li { display:grid; grid-template-columns:26px 1fr; column-gap:12px; padding:12px 14px; } .steps li::before { grid-row:span 2; margin:0; } .connect { margin-top:24px; } }
 </style>
 </head>
@@ -495,38 +495,38 @@ nav.tabs { position:static; }
   <section class="connect" id="connect" hidden>
     <div class="pitch">
       <span class="eyebrow">تحليل تعليقات الجمهور</span>
-      <h1>اعرفوا جمهوركم بيقول إيه عن كل برنامج.</h1>
-      <p>نقرأ تعليقات الجمهور على حساباتكم، ونصنّف كل تعليق: الانطباع، ونوعه، والجانب اللي بيتكلم عنه، والبرنامج، وهل محتاج رد. وفي آخر الشهر تقرير جاهز.</p>
+      <h1>صورة دقيقة لما يقوله جمهوركم عن كل برنامج.</h1>
+      <p>نجمع تعليقات الجمهور على حساباتكم الرسمية، ونصنّف كلاً منها وفق الانطباع، ونوع التعليق، والجانب الذي يتناوله، والبرنامج المعني، ومدى حاجته إلى رد. وتصلكم النتائج في لوحة تفاعلية وتقرير شهري جاهز للعرض.</p>
       <div class="plats" aria-label="المنصات">
         <span style="--c:#ff0033">يوتيوب</span><span style="--c:#d62976">إنستجرام</span><span style="--c:#1877f2">فيسبوك</span><span class="opt" style="--c:#25f4ee">TikTok</span><span class="opt" style="--c:#8a8a8a">X</span>
       </div>
       <figure class="demo" aria-label="مثال لتعليق بعد التصنيف">
-        <figcaption>مثال لتعليق بعد التحليل</figcaption>
+        <figcaption>نموذج لتعليق بعد التحليل</figcaption>
         <div class="demo-c">
           <div class="demo-h"><i class="av">م</i><div><b>مشاهد</b><small>يوتيوب · الحلقة ١٢</small></div></div>
           <p>«الحلقة جميلة والضيف كان فاهم كويس، بس الصوت كان واطي في النص التاني. ياريت تظبطوه المرة الجاية.»</p>
           <ul class="tags">
-            <li class="t-pos">انطباع إيجابي</li><li>نوعه: نقد بنّاء</li><li>الجانب: الصوت</li><li>البرنامج: الحلقة الأسبوعية</li><li class="t-reply">يحتاج رد</li>
+            <li class="t-pos">الانطباع: إيجابي</li><li>النوع: نقد بنّاء</li><li>الجانب: جودة الصوت</li><li>البرنامج: الحلقة الأسبوعية</li><li class="t-reply">يتطلب رداً</li>
           </ul>
         </div>
       </figure>
       <ol class="steps">
-        <li><b>اربطوا الحساب</b><span>اسم المستودع والمفتاح، مرة واحدة.</span></li>
-        <li><b>اختاروا الحسابات والفترة</b><span>وتشوفوا التكلفة المتوقعة قبل التشغيل.</span></li>
-        <li><b>اقرأوا النتائج</b><span>لوحة لكل برنامج ومنصة، وتقرير شهري، وملف CSV.</span></li>
+        <li><b>ربط الحساب</b><span>إدخال اسم المستودع ومفتاح الوصول مرة واحدة.</span></li>
+        <li><b>تحديد النطاق</b><span>اختيار الحسابات والفترة، مع تقدير للتكلفة قبل التشغيل.</span></li>
+        <li><b>قراءة النتائج</b><span>تحليل لكل برنامج ومنصة، وتقرير شهري، وملف بيانات CSV.</span></li>
       </ol>
-      <p class="trust">الكود والمفاتيح والبيانات كلها في حسابكم. محدش غيركم بيشوفها.</p>
+      <p class="trust"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>تُحفظ الشيفرة ومفاتيح الوصول والبيانات في حسابكم وحدكم، ولا يطّلع عليها أي طرف آخر.</p>
     </div>
     <div class="login">
-      <h2>الدخول</h2>
-      <p class="lead" style="margin:0">المفتاح بيتحفظ في متصفحكم بس، ومنه الواجهة بتقرا الإعدادات والنتائج من مستودعكم.</p>
-      <details class="how"><summary>كيف أحصل على المفتاح؟</summary><ol>
+      <h2>تسجيل الدخول</h2>
+      <p class="lead" style="margin:0">يُحفظ مفتاح الوصول في متصفحكم فقط، وتستخدمه الواجهة لقراءة الإعدادات والنتائج من مستودعكم.</p>
+      <details class="how"><summary>كيف أحصل على مفتاح الوصول؟</summary><ol>
         <li>افتح <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub ← Fine-grained token</a>.</li>
         <li>Repository access: <b>Only select repositories</b> ← <span class="num">audience-comments</span>.</li>
         <li>Permissions: <b>Contents</b> = Read and write، <b>Actions</b> = Read and write.</li>
       </ol></details>
       <div class="field"><label for="repo">المستودع</label><input type="text" id="repo" dir="ltr" value="" placeholder="اسم-الحساب/audience-comments"></div>
-      <div class="field"><label for="token">المفتاح</label><input type="password" id="token" dir="ltr" autocomplete="off" placeholder="github_pat_…"></div>
+      <div class="field"><label for="token">مفتاح الوصول</label><input type="password" id="token" dir="ltr" autocomplete="off" placeholder="github_pat_…"></div>
       <button class="btn primary big" id="connectBtn" type="button">دخول</button>
     </div>
   </section>
