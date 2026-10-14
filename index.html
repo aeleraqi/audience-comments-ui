@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>مرصد InfoTimes</title>
+<title>تحليل تعليقات الجمهور</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -378,7 +378,7 @@ dialog.drawer[open] { animation:slidein .22s var(--ease); } @keyframes slidein {
 .diag-item details summary { cursor:pointer; color:var(--fg3); font-size:.85rem; } .diag-item ul { margin:6px 0 0; padding-inline-start:18px; font-size:.85rem; color:var(--fg2); max-height:200px; overflow:auto; }
 .diag.compact { margin-top:12px; } .diag-ok { color:var(--ok); font-size:.9rem; }
 
-/* ═══ هوية InfoTimes بأسلوب منصّات الرصد: شريط كحلي متدرّج، أزرار كبسولية، بطاقات واسعة ═══ */
+/* ═══ الهوية بأسلوب منصّات الرصد: شريط كحلي متدرّج، أزرار كبسولية، بطاقات واسعة ═══ */
 :root { --grad:linear-gradient(115deg, #111111 0%, #1f1a19 40%, #5e1a14 75%, #c0392b 112%); --rl:16px; }
 body { background:var(--bg); }
 header.top { background:var(--grad); border-bottom:0; color:#fff; backdrop-filter:none; -webkit-backdrop-filter:none; box-shadow:0 8px 30px -18px #000; }
@@ -442,7 +442,7 @@ nav.tabs { position:static; }
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" id="homeLink" href="#" title="كل المشاريع"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".25"/><circle cx="16" cy="16" r="9" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".45"/><path d="M16 16 26 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="16" r="3.2" fill="var(--accent)"/><circle cx="23.5" cy="10.5" r="2" fill="var(--accent)"/></svg><b>مرصد InfoTimes</b></a>
+    <a class="brand" id="homeLink" href="#" title="كل المشاريع"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".25"/><circle cx="16" cy="16" r="9" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".45"/><path d="M16 16 26 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="16" r="3.2" fill="var(--accent)"/><circle cx="23.5" cy="10.5" r="2" fill="var(--accent)"/></svg><b>تعليقات الجمهور</b></a>
     <select id="project" aria-label="المشروع" class="pj"></select>
     <span class="chip pj" id="state">غير متصل</span>
     <span class="grow"></span>
@@ -468,9 +468,9 @@ nav.tabs { position:static; }
 <main class="wrap" id="main">
   <section class="connect" id="connect" hidden>
     <div class="pitch">
-      <span class="eyebrow">مرصد InfoTimes</span>
-      <h1>كل ما يُكتب عن عملائك، مصنّفاً ومحلّلاً، في مكان واحد.</h1>
-      <p>أخبار بكل اللغات، ومنصات التواصل، وتعليقات الجمهور. يجمعها المحرك، ويستبعد المكرر، ويصنّفها بالنبرة والمحور والموضوع، ثم يكتب التقرير الشهري.</p>
+      <span class="eyebrow">تحليل تعليقات الجمهور</span>
+      <h1>رأي جمهوركم في محتواكم، مصنّفاً ومحلّلاً، في مكان واحد.</h1>
+      <p>تعليقات الجمهور على حساباتكم في يوتيوب وإنستجرام وفيسبوك، وTikTok وX اختيارياً. يجمعها المحرك، ويصنّف كل تعليق بالانطباع ونوعه والبرنامج اللي بيتكلم عنه، ثم يكتب التقرير الشهري.</p>
       <ul class="feats">
         <li><b>مصادر متعددة</b><span>Google News وBing وRSS، وX وفيسبوك وإنستجرام وتيك توك ويوتيوب ولينكدإن</span></li>
         <li><b>تصنيف بالذكاء الاصطناعي</b><span>نبرة وعاطفة ومحور وموضوع، وحقول خاصة بكل عميل</span></li>
@@ -488,7 +488,7 @@ nav.tabs { position:static; }
       <p class="lead" style="margin:0">المفتاح يُحفظ في متصفحك فقط، ويقرأ الإعدادات والنتائج من الـ repo الخاص.</p>
       <details class="how"><summary>كيف أحصل على المفتاح؟</summary><ol>
         <li>افتح <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub ← Fine-grained token</a>.</li>
-        <li>Repository access: <b>Only select repositories</b> ← <span class="num">monitor-engine</span>.</li>
+        <li>Repository access: <b>Only select repositories</b> ← <span class="num">audience-comments</span>.</li>
         <li>Permissions: <b>Contents</b> = Read and write، <b>Actions</b> = Read and write.</li>
       </ol></details>
       <div class="field"><label for="repo">الـ repo</label><input type="text" id="repo" dir="ltr" value="" placeholder="اسم-الحساب/audience-comments"></div>
@@ -600,8 +600,8 @@ const el = (tag, attrs = {}, ...kids) => {
   for (const c of kids.flat()) if (c != null) e.append(c.nodeType ? c : document.createTextNode(c));
   return e;
 };
-const store = { get: k => { try { return localStorage.getItem(k); } catch { return null; } },
-                set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
+const store = { get: k => { try { return localStorage.getItem("audience-comments:" + k); } catch { return null; } },
+                set: (k, v) => { try { localStorage.setItem("audience-comments:" + k, v); } catch {} } };
 const fmt = n => (n || 0).toLocaleString("en-US");
 const pct = x => Math.round((x || 0) * 100) + "%";
 function toast(msg, ms = 3200) { const t = el("div", { class: "toast", role: "status" }, msg); document.body.append(t); setTimeout(() => t.remove(), ms); }
