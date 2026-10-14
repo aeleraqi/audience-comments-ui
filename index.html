@@ -437,6 +437,32 @@ dialog { border-radius:22px !important; }
 @media (max-width:1500px) { header.top .brand span { display:none; } header.top .btn { padding-inline:12px; } header.top .top .wrap, .top .wrap { gap:8px; } }
 nav.tabs { position:static; }
 @media (max-width:860px) { .hero { padding:22px 18px; border-radius:18px; } nav.tabs { top:auto; } }
+/* ═══ صفحة الدخول ═══ */
+.connect { margin:44px auto 60px; gap:40px; }
+.connect .pitch h1 { font-size:clamp(2rem, 4vw, 3rem); margin:10px 0 14px; }
+.connect .pitch > p { font-size:1.08rem; line-height:1.9; margin-bottom:18px; }
+.plats { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px; }
+.plats span { display:inline-flex; align-items:center; gap:7px; padding:5px 12px; border-radius:999px; border:1px solid var(--line); background:var(--surface); font-size:.88rem; }
+.plats span::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--c); }
+.plats .opt { color:var(--fg2); border-style:dashed; } .plats .opt::after { content:"اختياري"; font-size:.72rem; color:var(--fg3); }
+.demo { margin:0 0 24px; }
+.demo figcaption { font-size:.8rem; color:var(--fg3); margin-bottom:8px; }
+.demo-c { background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:16px 18px; box-shadow:var(--shadow); position:relative; }
+.demo-c::before { content:""; position:absolute; inset-block:16px; inset-inline-start:0; width:3px; border-radius:3px; background:var(--accent); }
+.demo-h { display:flex; align-items:center; gap:10px; } .demo-h b { display:block; font-size:.92rem; } .demo-h small { color:var(--fg3); font-size:.78rem; }
+.demo-h .av { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-style:normal; font-weight:600; background:var(--surface2); color:var(--fg2); }
+.demo-c > p { margin:12px 0 14px; line-height:1.9; }
+.tags { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px; }
+.tags li { font-size:.8rem; padding:3px 10px; border-radius:999px; background:var(--surface2); color:var(--fg2); }
+.tags .t-pos { background:var(--ok-soft); color:var(--ok); font-weight:600; }
+.tags .t-reply { background:var(--accent-soft); color:var(--accent); font-weight:600; }
+.steps { list-style:none; margin:0 0 18px; padding:0; display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; counter-reset:st; }
+.steps li { counter-increment:st; padding:14px; border-radius:16px; border:1px solid var(--line); background:var(--surface); }
+.steps li::before { content:counter(st, arabic-indic); display:grid; place-items:center; width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff; font-weight:700; font-size:.85rem; margin-bottom:8px; }
+.steps b { display:block; margin-bottom:2px; } .steps span { color:var(--fg2); font-size:.85rem; line-height:1.7; }
+.connect .pitch > p.trust { color:var(--fg3); font-size:.85rem; margin:4px 0 0; line-height:1.6; display:flex; align-items:center; gap:8px; }
+.trust::before { content:"🔒"; filter:grayscale(1); }
+@media (max-width:860px) { .steps { grid-template-columns:1fr; gap:8px; } .steps li { display:grid; grid-template-columns:26px 1fr; column-gap:12px; padding:12px 14px; } .steps li::before { grid-row:span 2; margin:0; } .connect { margin-top:24px; } }
 </style>
 </head>
 <body>
@@ -469,29 +495,37 @@ nav.tabs { position:static; }
   <section class="connect" id="connect" hidden>
     <div class="pitch">
       <span class="eyebrow">تحليل تعليقات الجمهور</span>
-      <h1>رأي جمهوركم في محتواكم، مصنّفاً ومحلّلاً، في مكان واحد.</h1>
-      <p>تعليقات الجمهور على حساباتكم في يوتيوب وإنستجرام وفيسبوك، وTikTok وX اختيارياً. يجمعها المحرك، ويصنّف كل تعليق بالانطباع ونوعه والبرنامج اللي بيتكلم عنه، ثم يكتب التقرير الشهري.</p>
-      <ul class="feats">
-        <li><b>مصادر متعددة</b><span>Google News وBing وRSS، وX وفيسبوك وإنستجرام وتيك توك ويوتيوب ولينكدإن</span></li>
-        <li><b>تصنيف بالذكاء الاصطناعي</b><span>نبرة وعاطفة ومحور وموضوع، وحقول خاصة بكل عميل</span></li>
-        <li><b>تقارير جاهزة</b><span>تقرير شهري ومقارنة بالشهر السابق والربع، وملف CSV لكل شهر</span></li>
-        <li><b>تكلفة تحت السيطرة</b><span>تقدير قبل كل تشغيل، وسقف إنفاق يوقف الجمع تلقائياً</span></li>
-      </ul>
-      <svg class="pitch-flow" viewBox="0 0 420 90" aria-hidden="true">
-        <path class="e" d="M30 45 C80 45 80 20 130 20 M30 45 C80 45 80 70 130 70 M130 20 C180 20 180 45 230 45 M130 70 C180 70 180 45 230 45 M230 45 H310 M310 45 H390"/>
-        <circle cx="30" cy="45" r="13" fill="#6D00CC"/><circle cx="130" cy="20" r="13" fill="#4285F4"/><circle cx="130" cy="70" r="13" fill="#1877F2"/>
-        <circle cx="230" cy="45" r="13" fill="#7a776d"/><circle cx="310" cy="45" r="13" fill="#7C4DFF"/><circle cx="390" cy="45" r="13" fill="#1E8E3E"/>
-      </svg>
+      <h1>اعرفوا جمهوركم بيقول إيه عن كل برنامج.</h1>
+      <p>نقرأ تعليقات الجمهور على حساباتكم، ونصنّف كل تعليق: الانطباع، ونوعه، والجانب اللي بيتكلم عنه، والبرنامج، وهل محتاج رد. وفي آخر الشهر تقرير جاهز.</p>
+      <div class="plats" aria-label="المنصات">
+        <span style="--c:#ff0033">يوتيوب</span><span style="--c:#d62976">إنستجرام</span><span style="--c:#1877f2">فيسبوك</span><span class="opt" style="--c:#25f4ee">TikTok</span><span class="opt" style="--c:#8a8a8a">X</span>
+      </div>
+      <figure class="demo" aria-label="مثال لتعليق بعد التصنيف">
+        <figcaption>مثال لتعليق بعد التحليل</figcaption>
+        <div class="demo-c">
+          <div class="demo-h"><i class="av">م</i><div><b>مشاهد</b><small>يوتيوب · الحلقة ١٢</small></div></div>
+          <p>«الحلقة جميلة والضيف كان فاهم كويس، بس الصوت كان واطي في النص التاني. ياريت تظبطوه المرة الجاية.»</p>
+          <ul class="tags">
+            <li class="t-pos">انطباع إيجابي</li><li>نوعه: نقد بنّاء</li><li>الجانب: الصوت</li><li>البرنامج: الحلقة الأسبوعية</li><li class="t-reply">يحتاج رد</li>
+          </ul>
+        </div>
+      </figure>
+      <ol class="steps">
+        <li><b>اربطوا الحساب</b><span>اسم المستودع والمفتاح، مرة واحدة.</span></li>
+        <li><b>اختاروا الحسابات والفترة</b><span>وتشوفوا التكلفة المتوقعة قبل التشغيل.</span></li>
+        <li><b>اقرأوا النتائج</b><span>لوحة لكل برنامج ومنصة، وتقرير شهري، وملف CSV.</span></li>
+      </ol>
+      <p class="trust">الكود والمفاتيح والبيانات كلها في حسابكم. محدش غيركم بيشوفها.</p>
     </div>
     <div class="login">
-      <h2>ربط الحساب</h2>
-      <p class="lead" style="margin:0">المفتاح يُحفظ في متصفحك فقط، ويقرأ الإعدادات والنتائج من الـ repo الخاص.</p>
+      <h2>الدخول</h2>
+      <p class="lead" style="margin:0">المفتاح بيتحفظ في متصفحكم بس، ومنه الواجهة بتقرا الإعدادات والنتائج من مستودعكم.</p>
       <details class="how"><summary>كيف أحصل على المفتاح؟</summary><ol>
         <li>افتح <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub ← Fine-grained token</a>.</li>
         <li>Repository access: <b>Only select repositories</b> ← <span class="num">audience-comments</span>.</li>
         <li>Permissions: <b>Contents</b> = Read and write، <b>Actions</b> = Read and write.</li>
       </ol></details>
-      <div class="field"><label for="repo">الـ repo</label><input type="text" id="repo" dir="ltr" value="" placeholder="اسم-الحساب/audience-comments"></div>
+      <div class="field"><label for="repo">المستودع</label><input type="text" id="repo" dir="ltr" value="" placeholder="اسم-الحساب/audience-comments"></div>
       <div class="field"><label for="token">المفتاح</label><input type="password" id="token" dir="ltr" autocomplete="off" placeholder="github_pat_…"></div>
       <button class="btn primary big" id="connectBtn" type="button">دخول</button>
     </div>
